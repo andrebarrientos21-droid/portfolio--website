@@ -1,0 +1,411 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cooper+Black&display=swap');
+
+
+/* 1. CUSTOM PROPERTIES / COLOURS */
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --orange: #ECAD3C;
+  --blue: #087FF7;
+  --muted: #d8d8d8;
+  --max-width: 1180px;
+  --border: 2px solid var(--white);
+}
+
+
+/* 2. BASIC RESET */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: "Cooper Black", Georgia, serif;
+  line-height: 1.55;
+}
+
+
+/* 3. ACCESSIBILITY */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: var(--orange);
+  color: var(--black);
+  padding: 10px 15px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 10px;
+}
+
+
+/* 4. HEADER / NAVIGATION */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom: var(--border);
+}
+
+.header-inner {
+  width: min(92%, var(--max-width));
+  min-height: 78px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.wordmark {
+  color: var(--orange);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.site-nav a,
+.site-footer a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 1px;
+}
+
+.site-nav a:hover,
+.site-footer a:hover,
+.contact-link:hover {
+  color: var(--orange);
+}
+
+
+/* 5. GENERAL SECTIONS */
+
+.section {
+  width: min(92%, var(--max-width));
+  margin: auto;
+  padding: 100px 0;
+}
+
+.section-number,
+.eyebrow,
+.project-type,
+.project-number {
+  color: var(--blue);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.05rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  line-height: 0.95;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: clamp(5rem, 12vw, 10rem);
+  margin: 20px 0 30px;
+}
+
+h1 span,
+h2 span {
+  color: var(--orange);
+}
+
+h2 {
+  color: var(--orange);
+  font-size: clamp(4rem, 8vw, 7rem);
+  margin-top: 15px;
+}
+
+h3 {
+  color: var(--orange);
+  font-size: 2.2rem;
+  margin: 10px 0;
+}
+
+
+/* 6. HOME / HERO */
+
+.hero {
+  min-height: calc(100vh - 78px);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-text {
+  max-width: 600px;
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  border: var(--border);
+  background: var(--blue);
+  padding: 12px;
+  transform: rotate(2deg);
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.button {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--black);
+  padding: 14px 24px;
+  text-decoration: none;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  border: 2px solid var(--orange);
+}
+
+.button:hover {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+
+
+/* 7. ABOUT */
+
+.about {
+  border-top: var(--border);
+  border-bottom: var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.about-copy {
+  font-size: 1.2rem;
+}
+
+.about-copy p + p {
+  margin-top: 25px;
+}
+
+
+/* 8. WORK / PORTFOLIO */
+
+.section-heading {
+  margin-bottom: 50px;
+}
+
+.section-heading > p:last-child {
+  max-width: 650px;
+  margin-top: 20px;
+}
+
+
+/* ARTWORK CARDS */
+
+.project-card {
+  border: var(--border);
+  background: #080808;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin-bottom: 35px;
+}
+
+
+/* IMAGE AREA FOR ARTWORK */
+
+.project-image {
+  min-height: 350px;
+  border-right: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--blue);
+}
+
+.project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  object-fit: cover;
+}
+
+
+/* INFORMATION AREA FOR ARTWORK */
+
+.project-info {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-number {
+  color: var(--orange);
+  font-size: 1.3rem;
+}
+
+.project-info p:not(.project-number):not(.project-type) {
+  color: var(--muted);
+}
+
+
+/* ============================================================
+   PLACEHOLDER ARTWORKS
+
+   These are only here so you can clearly see where Artwork 04-07
+   go. Replace the placeholder with an <img> when you have your
+   real artwork.
+   ============================================================ */
+
+.artwork-placeholder {
+  background: var(--blue);
+  color: var(--white);
+  padding: 30px;
+  text-align: center;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 2rem;
+}
+
+
+
+/* NOTE UNDER THE ARTWORKS */
+
+.portfolio-note {
+  margin-top: 30px;
+  border-left: 6px solid var(--blue);
+  padding: 15px 20px;
+  color: var(--muted);
+}
+
+
+/* 9. CONTACT */
+
+.contact {
+  border-top: var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.contact-copy {
+  font-size: 1.2rem;
+}
+
+.contact-link {
+  display: inline-block;
+  color: var(--blue);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 2.5rem;
+  text-decoration: none;
+  margin: 30px 0;
+}
+
+.small-text {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* 11. FOOTER */
+
+.site-footer {
+  border-top: var(--border);
+  padding: 25px 4%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 0.8rem;
+}
+
+
+/* 12. RESPONSIVE DESIGN, this was the hardest thing to understand*/
+
+@media (max-width: 800px) {
+
+  .hero,
+  .about,
+  .contact,
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .hero-image {
+    max-width: 550px;
+    margin: auto;
+  }
+
+  .project-image {
+    border-right: 0;
+    border-bottom: var(--border);
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .wordmark {
+    font-size: 2.4rem;
+  }
+
+  .site-nav {
+    gap: 15px;
+  }
+
+  h1 {
+    font-size: 4.6rem;
+  }
+
+  h2 {
+    font-size: 3.8rem;
+  }
+
+  .project-info {
+    padding: 25px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}
